@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dikshant Gaikwad - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer>
+    // Smooth scroll for navigation links
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('nav a[href^="#"]');
+      links.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // Highlight active nav link on scroll
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 80;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Dikshant Gaikwad</h1>
+    <p>Passionate Engineering Student & Web Developer</p>
+    <nav>
+      <a href="#about" class="active">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm Dikshant, a Engineering student passionate about web development, Java programming, and problem solving. I enjoy learning new technologies and building projects that solve real-world problems.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML5 & CSS3</li>
+        <li>JavaScript (Basics)</li>
+        <li>Java</li>
+        <li>Android Studio</li>
+        <li>Git & GitHub</li>
+        <li>Responsive Web Design</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <h3>Beginner HTML Project</h3>
+        <p>A simple static webpage built using HTML and CSS to practice web design basics.</p>
+        <a href="https://github.com/dikshantdev5/beginner-html-project" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      </article>
+
+      <article class="project">
+        <h3>Personal Portfolio Website</h3>
+        <p>This webpage showcasing my skills, projects, and contact info built with HTML and CSS.</p>
+        <a href="#" target="_blank" rel="noopener noreferrer">(Coming soon)</a>
+      </article>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p><strong>Maratha Vidya Prasarak Samaj's Institute of Management Research & Technology, Nashik</strong></p>
+      <p>Bachelor of Engineering (B.E.) in Computer Science, 2nd Year</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="mailto:your-email@example.com" method="post" enctype="text/plain" class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="Name" placeholder="Your name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="Email" placeholder="Your email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="Message" placeholder="Write your message here..." rows="5" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+      <p>Or reach me at:</p>
+      <p>Email: <a href="mailto:your-email@example.com">gaikwaddikshant55@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/dikshantdev5" target="_blank" rel="noopener noreferrer">github.com/dikshantdev5</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/dikshant-gaikwad-1375a130a/</a></p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Dikshant Gaikwad. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
